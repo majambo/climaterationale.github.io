@@ -1,1 +1,549 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Rationale Development Platform</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1d6f42;
+            --secondary-color: #3a9e6d;
+            --light-bg: #f7fbf9;
+            --dark-bg: #283b2a;
+            --text-color: #333;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+        
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            margin-bottom: 30px;
+        }
+        
+        .sidebar {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .content-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .resource-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .tag {
+            display: inline-block;
+            background-color: #e9f5ef;
+            color: var(--primary-color);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        footer {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+        
+        #climate-map {
+            height: 400px;
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .nav-pills .nav-link.active {
+            background-color: var(--primary-color);
+        }
+        
+        .nav-pills .nav-link {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="container">
+            <h1><i class="fas fa-leaf me-2"></i>Climate Rationale Development Platform</h1>
+            <p class="mb-0">A comprehensive resource for building evidence-based climate action plans</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar/Navigation -->
+            <div class="col-md-3 mb-4">
+                <div class="sidebar sticky-top" style="top: 20px; z-index: 1000;">
+                    <h5>Navigation</h5>
+                    <div class="nav flex-column nav-pills mt-3" id="v-pills-tab" role="tablist">
+                        <a class="nav-link active" id="v-pills-overview-tab" data-bs-toggle="pill" href="#v-pills-overview" role="tab">Overview</a>
+                        <a class="nav-link" id="v-pills-methodology-tab" data-bs-toggle="pill" href="#v-pills-methodology" role="tab">Methodology</a>
+                        <a class="nav-link" id="v-pills-data-tab" data-bs-toggle="pill" href="#v-pills-data" role="tab">Climate Data</a>
+                        <a class="nav-link" id="v-pills-case-studies-tab" data-bs-toggle="pill" href="#v-pills-case-studies" role="tab">Case Studies</a>
+                        <a class="nav-link" id="v-pills-resources-tab" data-bs-toggle="pill" href="#v-pills-resources" role="tab">Resources</a>
+                    </div>
+                    
+                    <h5 class="mt-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none"><i class="fas fa-file-pdf me-2"></i>Download Framework PDF</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none"><i class="fas fa-table me-2"></i>Climate Data Repository</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none"><i class="fas fa-chalkboard-teacher me-2"></i>Training Materials</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Main Content Area -->
+            <div class="col-md-9">
+                <div class="tab-content" id="v-pills-tabContent">
+                    <!-- Overview Tab -->
+                    <div class="tab-pane fade show active" id="v-pills-overview" role="tabpanel">
+                        <div class="content-section">
+                            <h2>Building Climate Rationale</h2>
+                            <p class="lead">Developing robust climate rationales is essential for effective climate action planning, policy development, and project funding.</p>
+                            
+                            <div id="climate-map"></div>
+                            
+                            <p>A strong climate rationale links observed and projected climate changes to specific impacts on communities, ecosystems, and infrastructure. It provides the scientific foundation for adaptation and mitigation efforts.</p>
+                            
+                            <div class="row mt-4">
+                                <div class="col-md-4 text-center mb-4">
+                                    <div class="p-3">
+                                        <i class="fas fa-chart-line fa-3x mb-3" style="color: var(--primary-color);"></i>
+                                        <h5>Climate Science</h5>
+                                        <p class="small">Evidence-based analysis of climate trends, projections, and impacts</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center mb-4">
+                                    <div class="p-3">
+                                        <i class="fas fa-users fa-3x mb-3" style="color: var(--primary-color);"></i>
+                                        <h5>Stakeholder Engagement</h5>
+                                        <p class="small">Incorporating local knowledge and community perspectives</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center mb-4">
+                                    <div class="p-3">
+                                        <i class="fas fa-balance-scale fa-3x mb-3" style="color: var(--primary-color);"></i>
+                                        <h5>Policy Integration</h5>
+                                        <p class="small">Aligning climate rationale with policy frameworks and development goals</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="content-section">
+                            <h3>Getting Started</h3>
+                            <p>This platform provides resources, methodologies, and examples to help you develop comprehensive climate rationales for various contexts and needs.</p>
+                            
+                            <div class="row mt-4">
+                                <div class="col-md-6 mb-3">
+                                    <a href="#v-pills-methodology" onclick="activateTab('v-pills-methodology-tab')" class="text-decoration-none">
+                                        <div class="resource-card">
+                                            <h5><i class="fas fa-clipboard-list me-2"></i>Step-by-Step Framework</h5>
+                                            <p class="mb-0">A structured approach to developing climate rationale for any project or policy initiative</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <a href="#v-pills-case-studies" onclick="activateTab('v-pills-case-studies-tab')" class="text-decoration-none">
+                                        <div class="resource-card">
+                                            <h5><i class="fas fa-search me-2"></i>Explore Case Studies</h5>
+                                            <p class="mb-0">Learn from successful climate rationale examples across different regions and sectors</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Methodology Tab -->
+                    <div class="tab-pane fade" id="v-pills-methodology" role="tabpanel">
+                        <div class="content-section">
+                            <h2>Climate Rationale Framework</h2>
+                            <p class="lead">A systematic approach to developing evidence-based climate rationales</p>
+                            
+                            <div class="accordion mt-4" id="methodologyAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <strong>Step 1: Climate Data Analysis</strong>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#methodologyAccordion">
+                                        <div class="accordion-body">
+                                            <p>Begin by collecting and analyzing relevant climate data:</p>
+                                            <ul>
+                                                <li>Historical climate trends (temperature, precipitation, extreme events)</li>
+                                                <li>Future climate projections under different scenarios</li>
+                                                <li>Regional climate models and downscaled data</li>
+                                                <li>Uncertainty analysis and confidence levels</li>
+                                            </ul>
+                                            <a href="#" class="btn btn-sm btn-outline-primary mt-2">View Data Analysis Guide</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            <strong>Step 2: Impact Assessment</strong>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#methodologyAccordion">
+                                        <div class="accordion-body">
+                                            <p>Identify and evaluate climate change impacts on:</p>
+                                            <ul>
+                                                <li>Natural systems (ecosystems, biodiversity, water resources)</li>
+                                                <li>Human systems (agriculture, health, infrastructure)</li>
+                                                <li>Economic sectors and livelihoods</li>
+                                                <li>Vulnerable populations and communities</li>
+                                            </ul>
+                                            <a href="#" class="btn btn-sm btn-outline-primary mt-2">Download Impact Assessment Templates</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            <strong>Step 3: Vulnerability Analysis</strong>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#methodologyAccordion">
+                                        <div class="accordion-body">
+                                            <p>Assess vulnerability by analyzing:</p>
+                                            <ul>
+                                                <li>Exposure to climate hazards</li>
+                                                <li>Sensitivity of systems to climate impacts</li>
+                                                <li>Adaptive capacity of communities and institutions</li>
+                                                <li>Existing resilience factors and gaps</li>
+                                            </ul>
+                                            <a href="#" class="btn btn-sm btn-outline-primary mt-2">View Vulnerability Assessment Framework</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            <strong>Step 4: Response Strategy Development</strong>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#methodologyAccordion">
+                                        <div class="accordion-body">
+                                            <p>Design appropriate response strategies based on the evidence:</p>
+                                            <ul>
+                                                <li>Adaptation measures to address identified vulnerabilities</li>
+                                                <li>Mitigation actions to reduce emissions and enhance sinks</li>
+                                                <li>Integrated approaches that address multiple objectives</li>
+                                                <li>Prioritization based on feasibility, cost-effectiveness, and co-benefits</li>
+                                            </ul>
+                                            <a href="#" class="btn btn-sm btn-outline-primary mt-2">Explore Strategy Development Tools</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFive">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                            <strong>Step 5: Documentation and Communication</strong>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#methodologyAccordion">
+                                        <div class="accordion-body">
+                                            <p>Effectively document and communicate the climate rationale:</p>
+                                            <ul>
+                                                <li>Compile evidence in a structured format</li>
+                                                <li>Develop clear narratives linking climate change to impacts and responses</li>
+                                                <li>Tailor communication for different stakeholders and purposes</li>
+                                                <li>Create visual representations of key findings and recommendations</li>
+                                            </ul>
+                                            <a href="#" class="btn btn-sm btn-outline-primary mt-2">Download Communication Templates</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Climate Data Tab -->
+                    <div class="tab-pane fade" id="v-pills-data" role="tabpanel">
+                        <div class="content-section">
+                            <h2>Climate Data Resources</h2>
+                            <p class="lead">Access reliable climate data to support your climate rationale development</p>
+                            
+                            <div class="row mt-4">
+                                <div class="col-lg-6 mb-4">
+                                    <div class="resource-card h-100">
+                                        <h5><i class="fas fa-database me-2"></i>Global Climate Datasets</h5>
+                                        <p>Comprehensive collections of climate variables and indicators from international sources.</p>
+                                        <div class="mb-3">
+                                            <span class="tag">Temperature</span>
+                                            <span class="tag">Precipitation</span>
+                                            <span class="tag">Sea Level</span>
+                                            <span class="tag">GHG Emissions</span>
+                                        </div>
+                                        <a href="#" class="btn btn-sm btn-primary">Access Datasets</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-6 mb-4">
+                                    <div class="resource-card h-100">
+                                        <h5><i class="fas fa-globe-americas me-2"></i>Regional Climate Projections</h5>
+                                        <p>Downscaled climate models and projections for specific regions and localities.</p>
+                                        <div class="mb-3">
+                                            <span class="tag">CMIP6</span>
+                                            <span class="tag">RCP Scenarios</span>
+                                            <span class="tag">Regional Models</span>
+                                        </div>
+                                        <a href="#" class="btn btn-sm btn-primary">View Projections</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-6 mb-4">
+                                    <div class="resource-card h-100">
+                                        <h5><i class="fas fa-chart-bar me-2"></i>Climate Indices and Indicators</h5>
+                                        <p>Standardized metrics and indices for monitoring climate change and its impacts.</p>
+                                        <div class="mb-3">
+                                            <span class="tag">Extreme Events</span>
+                                            <span class="tag">ENSO Index</span>
+                                            <span class="tag">Drought Indices</span>
+                                        </div>
+                                        <a href="#" class="btn btn-sm btn-primary">Explore Indicators</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-6 mb-4">
+                                    <div class="resource-card h-100">
+                                        <h5><i class="fas fa-tools me-2"></i>Analysis Tools and Software</h5>
+                                        <p>Tools for processing, analyzing, and visualizing climate data for rationale development.</p>
+                                        <div class="mb-3">
+                                            <span class="tag">GIS Tools</span>
+                                            <span class="tag">Statistical Analysis</span>
+                                            <span class="tag">Visualization</span>
+                                        </div>
+                                        <a href="#" class="btn btn-sm btn-primary">Access Tools</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="alert alert-info mt-3">
+                                <i class="fas fa-info-circle me-2"></i>
+                                <strong>Need custom data analysis?</strong> Our platform provides guidance on selecting and analyzing climate data for specific contexts. <a href="#" class="alert-link">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Case Studies Tab -->
+                    <div class="tab-pane fade" id="v-pills-case-studies" role="tabpanel">
+                        <div class="content-section">
+                            <h2>Case Studies</h2>
+                            <p class="lead">Learn from successful climate rationale examples across different regions and sectors</p>
+                            
+                            <div class="row mt-4">
+                                <div class="col-md-6 mb-4">
+                                    <div class="card">
+                                        <img src="/api/placeholder/600/300" class="card-img-top" alt="placeholder">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Urban Flood Resilience in Southeast Asia</h5>
+                                            <p class="card-text">A comprehensive climate rationale for urban flood management in rapidly growing coastal cities.</p>
+                                            <div class="mb-3">
+                                                <span class="tag">Urban</span>
+                                                <span class="tag">Flooding</span>
+                                                <span class="tag">Asia</span>
+                                            </div>
+                                            <a href="#" class="btn btn-sm btn-primary">View Case Study</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-4">
+                                    <div class="card">
+                                        <img src="/api/placeholder/600/300" class="card-img-top" alt="placeholder">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Drought-Resilient Agriculture in Sub-Saharan Africa</h5>
+                                            <p class="card-text">Climate rationale for agricultural adaptation strategies in drought-prone regions.</p>
+                                            <div class="mb-3">
+                                                <span class="tag">Agriculture</span>
+                                                <span class="tag">Drought</span>
+                                                <span class="tag">Africa</span>
+                                            </div>
+                                            <a href="#" class="btn btn-sm btn-primary">View Case Study</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-4">
+                                    <div class="card">
+                                        <img src="/api/placeholder/600/300" class="card-img-top" alt="placeholder">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Coastal Ecosystem Protection in the Caribbean</h5>
+                                            <p class="card-text">Climate rationale for mangrove restoration and coral reef protection initiatives.</p>
+                                            <div class="mb-3">
+                                                <span class="tag">Ecosystems</span>
+                                                <span class="tag">Coastal</span>
+                                                <span class="tag">Caribbean</span>
+                                            </div>
+                                            <a href="#" class="btn btn-sm btn-primary">View Case Study</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-4">
+                                    <div class="card">
+                                        <img src="/api/placeholder/600/300" class="card-img-top" alt="placeholder">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Clean Energy Transition in Alpine Communities</h5>
+                                            <p class="card-text">Climate rationale for renewable energy development in mountain regions facing rapid warming.</p>
+                                            <div class="mb-3">
+                                                <span class="tag">Energy</span>
+                                                <span class="tag">Mountains</span>
+                                                <span class="tag">Europe</span>
+                                            </div>
+                                            <a href="#" class="btn btn-sm btn-primary">View Case Study</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center mt-4">
+                                <a href="#" class="btn btn-outline-primary">Load More Case Studies</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Resources Tab -->
+                    <div class="tab-pane fade" id="v-pills-resources" role="tabpanel">
+                        <div class="content-section">
+                            <h2>Resources and Tools</h2>
+                            <p class="lead">Access materials to support your climate rationale development process</p>
+                            
+                            <ul class="nav nav-tabs mt-4" id="resourcesTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="templates-tab" data-bs-toggle="tab" data-bs-target="#templates" type="button" role="tab">Templates</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="guidance-tab" data-bs-toggle="tab" data-bs-target="#guidance" type="button" role="tab">Guidance Documents</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="training-tab" data-bs-toggle="tab" data-bs-target="#training" type="button" role="tab">Training Materials</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="webinars-tab" data-bs-toggle="tab" data-bs-target="#webinars" type="button" role="tab">Webinars</button>
+                                </li>
+                            </ul>
+                            
+                            <div class="tab-content mt-3" id="resourcesTabContent">
+                                <div class="tab-pane fade show active" id="templates" role="tabpanel">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <div class="resource-card">
+                                                <h5><i class="fas fa-file-alt me-2"></i>Climate Rationale Framework Template</h5>
+                                                <p>A structured template for organizing climate data, impacts, and response strategies.</p>
+                                                <a href="#" class="btn btn-sm btn-primary"><i class="fas fa-download me-1"></i> Download (DOCX)</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <div class="resource-card">
+                                                <h5><i class="fas fa-file-excel me-2"></i>Climate Data Analysis Spreadsheet</h5>
+                                                <p>Excel templates for analyzing climate trends, projections, and uncertainties.</p>
+                                                <a href="#" class="btn btn-sm btn-primary"><i class="fas fa-download me-1"></i> Download (XLSX)</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <div class="resource-card">
+                                                <h5><i class="fas fa-file-powerpoint me-2"></i>Climate Rationale Presentation Template</h5>
+                                                <p>PowerPoint slides for presenting climate rationale to different audiences.</p>
+                                                <a href="#" class="btn btn-sm btn-primary"><i class="fas fa-download me-1"></i> Download (PPTX)</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <div class="resource-card">
+                                                <h5><i class="fas fa-chart-pie me-2"></i>Visualization Templates</h5>
+                                                <p>Templates for creating effective visual representations of climate data and impacts.</p>
+                                                <a href="#" class="btn btn-sm btn-primary"><i class="fas fa-download me-1"></i> Download (ZIP)</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="tab-pane fade" id="guidance" role="tabpanel">
+                                    <div class="list-group">
+                                        <a href="#" class="list-group-item list-group-item-action">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1">Climate Rationale Development Guide</h5>
+                                                <small class="text-muted">PDF, 45 pages</small>
+                                            </div>
+                                            <p class="mb-1">Comprehensive guidance on developing climate rationales for various contexts and purposes.</p>
+                                        </a>
+                                        <a href="#" class="list-group-item list-group-item-action">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1">Climate Data Interpretation Handbook</h5>
+                                                <small class="text-muted">PDF, 32 pages</small>
+                                            </div>
+                                            <p class="mb-1">Guidelines for interpreting climate data and projections with appropriate consideration of uncertainties.</p>
+                                        </a>
+                                        <a href="#" class="list-group-item list-group-item-action">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1">Climate Finance Rationale Development</h5>
+                                                <small class="text-muted">PDF, 28 pages</small>
+                                            </div>
+                                            <p class="mb-1">Specific guidance for developing climate rationales for funding proposals and financial mechanisms.</p>
+                                        </a>
+                                        <a href="#" class="list-group-item list-group-item-action">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1">Sector-Specific Climate Rationale Guidelines</h5>
+                                                <small class="text-muted">PDF, 50 pages</small>
+                                            </div>
+                                            <p class="mb-1">Tailored guidance for developing climate rationales across different sectors (agriculture, water, health, etc.).</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="tab-pane fade" id="training" role="tabpanel">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <div class="card">
+                                                <img src="/api/placeholder/600/300" class="card-img-top" alt
