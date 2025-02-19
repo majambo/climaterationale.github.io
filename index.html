@@ -26,6 +26,21 @@
             color: white;
             padding: 30px 0;
             margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .header .container {
+            display: flex;
+            align-items: center; /* Vertically center the logo and heading */
+        }
+        
+        .header .logo {
+            height: 100px; /* Adjust the height of the logo as needed */
+            margin-right: 20px; /* Add spacing between the logo and the heading */
+        }
+        
+        .header .platform-title {
+            flex-grow: .5; /* Allow the heading to take up remaining space */
         }
         
         .content-section {
@@ -42,234 +57,716 @@
             padding: 20px 0;
             margin-top: 50px;
         }
+
+        .language-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .language-switcher button {
+            margin-left: 10px;
+        }
+
+        .resources-section {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        .resources-section h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .resources-section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .resources-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .resources-section ul li a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .resources-section ul li a:hover {
+            color: var(--light-bg);
+        }
     </style>
 </head>
+
 <body>
     <div class="header">
         <div class="container">
-            <h1 class="platform-title"><i class="fas fa-leaf me-2"></i>Climate Rationale Development Platform</h1>
-            <p class="mb-0">A comprehensive resource for building evidence-based climate action plans</p>
+            <div class="platform-title">
+                <h1><i class="fas fa-leaf me-2"></i>Climate Rationale Development Platform</h1>
+                <p class="mb-0">A comprehensive resource for building evidence-based climate rationale</p>
+            </div>
+            <img src="Alliance_Logo2.jpg" alt="Logo" class="logo">
+        </div>
+        <div class="language-switcher">
+            <button id="englishBtn" class="btn btn-primary">English</button>
+            <button id="frenchBtn" class="btn btn-secondary">Français</button>
         </div>
     </div>
     
     <div class="container">
         <div class="content-section">
-            <h2>Climate Rationale</h2>
-            <p>A climate rationale is a scientific explanation of how a proposed project will address climate change. It's used to help policymakers, donors, and service providers understand the climate risks and vulnerabilities of a project.</p>
-            <h3>Purpose</h3>
-            <ul>
-                <li>To help ensure that projects address climate change</li>
-                <li>To help ensure that projects contribute to climate resilience</li>
-                <li>To help ensure that projects are based on the best available climate science</li>
-            </ul>
-        </div>
-        
-        <div class="content-section">
-            <h2>Objectives</h2>
-            <ul>
-                <li>Understand the Role of Climate Data in Project Development – Learn how to use scientific data to justify climate-related interventions.</li>
-                <li>Identify Historical Climate Trends – Analyze past climate patterns using real datasets.</li>
-                <li>Project Future Climate Risks – Utilize climate models to assess potential impacts.</li>
-                <li>Quantify Climate Vulnerabilities – Apply climate indices and risk assessment tools to evaluate affected populations and ecosystems.</li>
-                <li>Strengthen Decision-Making in Climate Proposals – Learn how to integrate climate data into funding applications to enhance project credibility.</li>
-            </ul>
-        </div>
-        
-        <div class="content-section">
-            <h2>Expected Outcomes</h2>
-            <ul>
-                <li>Analyze and Interpret Climate Data – Use historical trends and projections to inform project design.</li>
-                <li>Develop a Climate Rationale – Draft a compelling justification for a project proposal, demonstrating the climate connection.</li>
-            </ul>
-        </div>
-        
-        <div class="content-section">
-            <h2>Workshop Agenda (90-120 minutes)</h2>
-            <p><strong>24th Monday 2025</strong></p>
-            <ul>
-                <li>
-                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#introductionCollapse" aria-expanded="false" aria-controls="introductionCollapse">
-                        Part 1: Introduction and Insights
-                    </button>
-                    <div class="collapse" id="introductionCollapse">
-                        <div class="card card-body">
-                            <h4>What Climate Change Impact Concerns You Most in Your Region?</h4>
-                            <p>Understanding the specific climate change impacts in different regions is critical for designing effective adaptation and mitigation strategies. Participants will share insights on how climate change affects their communities, industries, and environments.</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#objectivesCollapse" aria-expanded="false" aria-controls="objectivesCollapse">
-                        Part 2: Explanation of the workshop objectives and expected outcomes
-                    </button>
-                    <div class="collapse" id="objectivesCollapse">
-                        <div class="card card-body">
-                            <h4>Objectives</h4>
-                            <ul>
-                                <li>Understand the Role of Climate Data in Project Development – Learn how to use scientific data to justify climate-related interventions.</li>
-                                <li>Identify Historical Climate Trends – Analyze past climate patterns using real datasets.</li>
-                                <li>Project Future Climate Risks – Utilize climate models to assess potential impacts.</li>
-                                <li>Quantify Climate Vulnerabilities – Apply climate indices and risk assessment tools to evaluate affected populations and ecosystems.</li>
-                                <li>Strengthen Decision-Making in Climate Proposals – Learn how to integrate climate data into funding applications to enhance project credibility.</li>
-                            </ul>
-                            <h4>Expected Outcomes</h4>
-                            <ul>
-                                <li>Analyze and Interpret Climate Data – Use historical trends and projections to inform project design.</li>
-                                <li>Develop a Climate Rationale – Draft a compelling justification for a project proposal, demonstrating the climate connection.</li>
-                                                            </li>
-                                <li>
-                                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#climateToolsCollapse" aria-expanded="false" aria-controls="climateToolsCollapse">
-                                        Analysis Ready Climate Data Tools
-                                    </button>
-                                    <div class="collapse" id="climateToolsCollapse">
-                                        <div class="card card-body">
-                                            <ul>
-                                                <li><a href="https://adaptationatlas.cgiar.org" target="_blank">Africa Adaptation Atlas</a></li>
-                                                <li><a href="https://climateknowledgeportal.worldbank.org" target="_blank">Climate Change Knowledge Portal</a></li>
-                                                <li><a href="https://agrica.de" target="_blank">Climate Risk Analyses for Adaptation Planning in Sub-Saharan Africa</a></li>
-                                                                            </li>
-                                <li>
-                                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#climateToolsCollapse" aria-expanded="false" aria-controls="climateToolsCollapse">
-                                        Analysis Ready Climate Data Tools
-                                    </button>
-                                    <div class="collapse" id="climateToolsCollapse">
-                                        <div class="card card-body">
-                                            <ul>
-                                                <li><a href="https://adaptationatlas.cgiar.org" target="_blank">Africa Adaptation Atlas</a></li>
-                                                <li><a href="https://climateknowledgeportal.worldbank.org" target="_blank">Climate Change Knowledge Portal</a></li>
-                                                <li><a href="https://agrica.de" target="_blank">Climate Risk Analyses for Adaptation Planning in Sub-Saharan Africa</a></li>
-                                                                            </li>
-                                <li>
-                                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#climateToolsCollapse" aria-expanded="false" aria-controls="climateToolsCollapse">
-                                        Analysis Ready Climate Data Tools
-                                    </button>
-                                    <div class="collapse" id="climateToolsCollapse">
-                                        <div class="card card-body">
-                                            <ul>
-                                                <li><a href="https://adaptationatlas.cgiar.org" target="_blank">Africa Adaptation Atlas</a></li>
-                                                <li><a href="https://climateknowledgeportal.worldbank.org" target="_blank">Climate Change Knowledge Portal</a></li>
-                                                <li><a href="https://agrica.de" target="_blank">Climate Risk Analyses for Adaptation Planning in Sub-Saharan Africa</a></li>
-                                                                            </li>
-                                <li>
-                                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#climateToolsCollapse" aria-expanded="false" aria-controls="climateToolsCollapse">
-                                        Analysis Ready Climate Data Tools
-                                    </button>
-                                    <div class="collapse" id="climateToolsCollapse">
-                                        <div class="card card-body">
-                                            <ul>
-                                                <li><a href="https://adaptationatlas.cgiar.org" target="_blank">Africa Adaptation Atlas</a></li>
-                                                <li><a href="https://climateknowledgeportal.worldbank.org" target="_blank">Climate Change Knowledge Portal</a></li>
-                                                <li><a href="https://agrica.de" target="_blank">Climate Risk Analyses for Adaptation Planning in Sub-Saharan Africa</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#foundationsCollapse" aria-expanded="false" aria-controls="foundationsCollapse">
-                        Part 3: Foundations of Climate Rationale
-                    </button>
-                    <div class="collapse" id="foundationsCollapse">
-                        <div class="card card-body">
-                            <h4>Defining Climate Rationale</h4>
-                            <h5>What?</h5>
-                            <p>Climate rationale refers to the justification for how a proposed project directly addresses climate change. It is based on scientific evidence, climate data, and risk assessments to demonstrate the need for intervention. A strong climate rationale links project objectives with observed climate trends, future projections, and vulnerability assessments.</p>
-                            <h5>Why?</h5>
-                            <ul>
-                                <li>Ensures that projects are designed to specifically address climate-related challenges rather than general development issues.</li>
-                                <li>Helps secure funding from climate finance mechanisms (e.g., Green Climate Fund, Adaptation Fund) by demonstrating clear climate impact.</li>
-                                <li>Aligns with national climate policies and international frameworks like the Paris Agreement and Sustainable Development Goals (SDGs).</li>
-                                <li>Supports evidence-based decision-making for climate adaptation and mitigation actions.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            <p><strong>25th Tuesday 2025</strong></p>
-            <ul>
-                <li>
-                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#climateEvidenceCollapse" aria-expanded="false" aria-controls="climateEvidenceCollapse">
-                        Part 4: Climate Evidence and Data Analysis
-                    </button>
-                    <div class="collapse" id="climateEvidenceCollapse">
-                        <div class="card card-body">
-                            <ul>
-                                <li>
-                                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#climateDataCollapse" aria-expanded="false" aria-controls="climateDataCollapse">
-                                        Sources of Climate Data
-                                    </button>
-                                    <div class="collapse" id="climateDataCollapse">
-                                        <div class="card card-body text-center">
-                                            <img src="/mnt/data/image.png" alt="Climate Data Sources" class="img-fluid">
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#climateMetricsCollapse" aria-expanded="false" aria-controls="climateMetricsCollapse">
-                                        Climate Indices and Metrics for Analysis
-                                    </button>
-                                    <div class="collapse" id="climateMetricsCollapse">
-                                        <div class="card card-body text-center">
-                                            <img src="/mnt/data/image.png" alt="Climate Indices and Metrics" class="img-fluid">
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            
-<p><strong>26th Wednesday 2025</strong></p>
-            <ul>
-                <li>Part 5: Climate Impact Assessment</li>
-            </ul>
-            <p><strong>27th Thursday 2025</strong></p>
-            <ul>
-                <li>Practical session to develop a Climate Rationale</li>
+            <div class="lang-en">
+                <h2>Climate Rationale</h2>
+                <p>A climate rationale is a scientific explanation of how a proposed project will address climate change. It's used to help policymakers, donors, and service providers understand the climate risks and vulnerabilities of a project. While most countries recognise the importance of adaptation to climate change, there is limited access to reliable information on climate impacts and risks which should inform the selection of adaptation strategies. This is also true for the operationalisation of adaptation goals which are defined in Nationally Determined Contributions (NDCs) and National Adaptation Plans (NAPs): How to translate adaptation goals into concrete actions? Hence, there is a need for science-based adaptation planning which requires sound climate risk analyses and assessment of potential adaptation strategies.</p>
+
+                <p>To address this issue, the Climate Finance and Innovative Business Models course aims to provide a comprehensive understanding of how to integrate climate risk assessments, finance mechanisms, and innovative business approaches into adaptation planning. This includes equipping participants with the tools and knowledge to translate adaptation goals into actionable strategies, ensuring that climate finance is effectively mobilized to support resilient and sustainable projects.</p>
+
+                <h3>Purpose</h3>
                 <ul>
-                    <li>Identify the climate change scenario for the project's region</li>
-                    <li>Identify the climate impacts that the project will address</li>
-                    <li>Identify how the project will address those impacts</li>
-                    <li>Identify the people who will be affected by the climate impacts</li>
-                    <li>Identify barriers to addressing the climate problem</li>
-                    <li>Identify activities that will address those barriers</li>
+                    <li>To help ensure that projects address climate change</li>
+                    <li>To help ensure that projects contribute to climate resilience</li>
+                    <li>To help ensure that projects are based on the best available climate science</li>
                 </ul>
-            </ul>
+            </div>
+            <div class="lang-fr" style="display: none;">
+                <h2>Raison d'être climatique</h2>
+                <p>Une raison d'être climatique est une explication scientifique de la manière dont un projet proposé abordera le changement climatique. Elle est utilisée pour aider les décideurs, les donateurs et les prestataires de services à comprendre les risques et les vulnérabilités climatiques d'un projet. Bien que la plupart des pays reconnaissent l'importance de l'adaptation au changement climatique, l'accès à des informations fiables sur les impacts et les risques climatiques qui devraient guider la sélection des stratégies d'adaptation est limité. Cela est également vrai pour la mise en œuvre des objectifs d'adaptation définis dans les Contributions Déterminées au niveau National (CDN) et les Plans Nationaux d'Adaptation (PNA) : Comment traduire les objectifs d'adaptation en actions concrètes ? Par conséquent, il est nécessaire de planifier l'adaptation sur la base de la science, ce qui nécessite des analyses solides des risques climatiques et une évaluation des stratégies d'adaptation potentielles.</p>
+
+                <p>Pour résoudre ce problème, le cours sur le financement climatique et les modèles commerciaux innovants vise à fournir une compréhension approfondie de la manière d'intégrer les évaluations des risques climatiques, les mécanismes de financement et les approches commerciales innovantes dans la planification de l'adaptation. Cela inclut la fourniture aux participants des outils et des connaissances nécessaires pour traduire les objectifs d'adaptation en stratégies actionnables, en veillant à ce que le financement climatique soit mobilisé de manière efficace pour soutenir des projets résilients et durables.</p>
+
+                <h3>Objectif</h3>
+                <ul>
+                    <li>Veiller à ce que les projets abordent le changement climatique</li>
+                    <li>Veiller à ce que les projets contribuent à la résilience climatique</li>
+                    <li>Veiller à ce que les projets soient basés sur les meilleures données scientifiques disponibles sur le climat</li>
+                </ul>
+            </div>
         </div>
         
         <div class="content-section">
-            <h2>Useful Platforms for Climate Data</h2>
-            <p>While most countries recognise the importance of adaptation to climate change, there is limited access to reliable information on climate impacts and risks which should inform the selection of adaptation strategies. This is also true for the operationalisation of adaptation goals which are defined in Nationally Determined Contributions (NDCs) and National Adaptation Plans (NAPs): How to translate adaptation goals into concrete actions? Hence, there is a need for science-based adaptation planning which requires sound climate risk analyses and assessment of potential adaptation strategies. To address this issue, there are a number of platforms that provide comprehensive climate risk analyses as listed below. Explore the platforms.</p>
-            <ul>
-                <li><a href="https://adaptationatlas.cgiar.org" target="_blank">Africa Adaptation Atlas</a> - Provides spatially explicit climate risk assessments to support decision-making in Africa.</li>
-                <li><a href="https://climateknowledgeportal.worldbank.org" target="_blank">Climate Change Knowledge Portal</a> - Offers global, regional, and country-level climate data, risk assessments, and projections.</li>
-                <li><a href="https://agrica.de" target="_blank">Climate Risk Analyses for Adaptation Planning in Sub-Saharan Africa</a> - Delivers detailed climate risk and impact analyses to aid adaptation strategies in Africa.</li>
-            </ul>
+            <div class="lang-en">
+                <h2>Timetable (90-120 minutes)</h2>
+                <p><strong>24th Monday 2025</strong></p>
+                <ul>
+                    <li>
+                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#introductionCollapse" aria-expanded="false" aria-controls="introductionCollapse">
+                            Part 1: Introduction and Insights
+                        </button>
+                        <div class="collapse" id="introductionCollapse">
+                            <div class="card card-body">
+                                <h4>What Climate Change Impact Concerns You Most in Your Region?</h4>
+                                <p>Understanding the specific climate change impacts in different regions is critical for designing effective adaptation and mitigation strategies. Participants will share insights on how climate change affects their communities, industries, and environments.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#objectivesCollapse" aria-expanded="false" aria-controls="objectivesCollapse">
+                            Part 2: Explanation of the workshop objectives and expected outcomes
+                        </button>
+                        <div class="collapse" id="objectivesCollapse">
+                            <div class="card card-body">
+                                <h4>Objectives</h4>
+                                <ul>
+                                    <li>Understand the Role of Climate Data in Project Development – Learn how to use scientific data to justify climate-related interventions.</li>
+                                    <li>Identify Historical Climate Trends – Analyze past climate patterns using real datasets.</li>
+                                    <li>Project Future Climate Risks – Utilize climate models to assess potential impacts.</li>
+                                    <li>Quantify Climate Vulnerabilities – Apply climate indices and risk assessment tools to evaluate affected populations and ecosystems.</li>
+                                    <li>Strengthen Decision-Making in Climate Proposals – Learn how to integrate climate data into funding applications to enhance project credibility.</li>
+                                </ul>
+                                <h4>Expected Outcomes</h4>
+                                <ul>
+                                    <li>Analyze and Interpret Climate Data – Use historical trends and projections to inform project design.</li>
+                                    <li>Develop a Climate Rationale – Draft a compelling justification for a project proposal, demonstrating the climate connection.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#foundationsCollapse" aria-expanded="false" aria-controls="foundationsCollapse">
+                            Part 3: Foundations of Climate Rationale
+                        </button>
+                        <div class="collapse" id="foundationsCollapse">
+                            <div class="card card-body">
+                                <h4>Defining Climate Rationale</h4>
+                                <h5>What?</h5>
+                                <p>Climate rationale refers to the justification for how a proposed project directly addresses climate change. It is based on scientific evidence, climate data, and risk assessments to demonstrate the need for intervention. A strong climate rationale links project objectives with observed climate trends, future projections, and vulnerability assessments.</p>
+                                <h5>Why?</h5>
+                                <ul>
+                                    <li>Ensures that projects are designed to specifically address climate-related challenges rather than general development issues.</li>
+                                    <li>Helps secure funding from climate finance mechanisms (e.g., Green Climate Fund, Adaptation Fund) by demonstrating clear climate impact.</li>
+                                    <li>Aligns with national climate policies and international frameworks like the Paris Agreement and Sustainable Development Goals (SDGs).</li>
+                                    <li>Supports evidence-based decision-making for climate adaptation and mitigation actions.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <p><strong>25th Tuesday 2025</strong></p>
+                <ul>
+                    <li>
+                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#climateEvidenceCollapse" aria-expanded="false" aria-controls="climateEvidenceCollapse">
+                            Part 4: Climate Evidence and Data Analysis
+                        </button>
+                        <div class="collapse" id="climateEvidenceCollapse">
+                            <div class="card card-body">
+                                <ul>
+                                    <li>
+                                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#climateDataCollapse" aria-expanded="false" aria-controls="climateDataCollapse">
+                                            Sources of Climate Data
+                                        </button>
+                                        <div class="collapse" id="climateDataCollapse">
+                                            <div class="card card-body text-center">
+                                                <img src="/mnt/data/image.png" alt="Climate Data Sources" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#climateMetricsCollapse" aria-expanded="false" aria-controls="climateMetricsCollapse">
+                                            Climate Indices and Metrics for Analysis
+                                        </button>
+                                        <div class="collapse" id="climateMetricsCollapse">
+                                            <div class="card card-body text-center">
+                                                <img src="/mnt/data/image.png" alt="Climate Indices and Metrics" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#analysisToolsCollapse" aria-expanded="false" aria-controls="analysisToolsCollapse">
+                                            Analysis Ready Climate Data Tools
+                                        </button>
+                                        <div class="collapse" id="analysisToolsCollapse">
+                                            <div class="card card-body">
+                                                <h4>Key Tools for Climate Data Analysis</h4>
+                                                <ul>
+                                                    <li><a href="https://adaptationatlas.cgiar.org" target="_blank">Africa Adaptation Atlas</a> - Provides spatially explicit climate risk assessments to support decision-making in Africa.</li>
+                                                    <li><a href="https://climateknowledgeportal.worldbank.org" target="_blank">World Bank Climate Change Knowledge Portal</a> - Offers global, regional, and country-level climate data, risk assessments, and projections.</li>
+                                                    <li><a href="https://agrica.de" target="_blank">AGRICA - Climate Risk Analyses for Africa</a> - Delivers detailed climate risk and impact analyses to aid adaptation strategies in Sub-Saharan Africa.</li>
+                                                </ul>
+                                                <p class="mt-3">These platforms offer pre-processed, analysis-ready climate datasets that can be directly incorporated into your climate rationale development process.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                
+                <p><strong>26th Wednesday 2025</strong></p>
+                <ul>
+                    <li>Socioeconomic Assessment</li>
+                </ul>
+
+                <p><strong>27th Thursday 2025</strong></p>
+                <ul>
+                    <li>
+                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#climateImpactAssessmentCollapse" aria-expanded="false" aria-controls="climateImpactAssessmentCollapse">
+                            Part 5: Practical session to develop a Climate Rationale
+                        </button>
+                        <div class="collapse" id="climateImpactAssessmentCollapse">
+                            <div class="card card-body">
+                                <ul>
+                                    <li>
+                                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#step1Collapse" aria-expanded="false" aria-controls="step1Collapse">
+                                            Step 1: Identification of Climate Impacts and Vulnerabilities (WHAT & WHO is affected?)
+                                        </button>
+                                        <div class="collapse" id="step1Collapse">
+                                            <div class="card card-body">
+                                                <h4>Focus:</h4>
+                                                <ul>
+                                                    <li>Establishing WHAT climate risks exist in the project area.</li>
+                                                    <li>Identifying WHO is most vulnerable to these risks.</li>
+                                                </ul>
+                                                <h4>Key Activities:</h4>
+                                                <ul>
+                                                    <li>Assess climate-related hazards (e.g., droughts, floods, heatwaves, sea-level rise).</li>
+                                                    <li>Identify vulnerable sectors and populations (e.g., agriculture, water, health, low-income communities).</li>
+                                                    <li>Use vulnerability assessments to determine exposure, sensitivity, and adaptive capacity.</li>
+                                                </ul>
+                                                <h4>Example Questions to Address:</h4>
+                                                <ul>
+                                                    <li>What are the key climate hazards in the project area?</li>
+                                                    <li>Which sectors and communities are most at risk?</li>
+                                                    <li>What has been the observed impact of climate change on these areas?</li>
+                                                </ul>
+                                                <h4>Outcome:</h4>
+                                                <p>A clear understanding of which climate risks are affecting the project area and who is most vulnerable to these risks.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#step2Collapse" aria-expanded="false" aria-controls="step2Collapse">
+                                            Step 2: Use of Scientific Data and Evidence (WHY & HOW is it happening?)
+                                        </button>
+                                        <div class="collapse" id="step2Collapse">
+                                            <div class="card card-body">
+                                                <h4>Focus:</h4>
+                                                <ul>
+                                                    <li>WHY are these climate risks occurring? (Backed by scientific evidence).</li>
+                                                    <li>HOW are these risks projected to evolve in the future?</li>
+                                                </ul>
+                                                <h4>Key Activities:</h4>
+                                                <ul>
+                                                    <li>Analyze historical climate data to detect trends (e.g., temperature changes over the last 50 years).</li>
+                                                    <li>Use climate models and projections to assess future risks (e.g., IPCC scenarios, RCP projections).</li>
+                                                    <li>Validate findings with scientific research (e.g., IPCC reports, peer-reviewed studies).</li>
+                                                </ul>
+                                                <h4>Example Questions to Address:</h4>
+                                                <ul>
+                                                    <li>What does historical climate data show about trends in temperature, rainfall, and extreme events?</li>
+                                                    <li>How are future climate projections expected to impact the project area?</li>
+                                                    <li>What scientific studies or reports confirm these trends?</li>
+                                                </ul>
+                                                <h4>Outcome:</h4>
+                                                <p>A scientifically backed justification that explains why climate risks exist and how they may worsen over time.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#step3Collapse" aria-expanded="false" aria-controls="step3Collapse">
+                                            Step 3: Align with National and International Policies (WHAT POLICY FRAMEWORKS support this project?)
+                                        </button>
+                                        <div class="collapse" id="step3Collapse">
+                                            <div class="card card-body">
+                                                <h4>Focus:</h4>
+                                                <ul>
+                                                    <li>WHAT policies and strategies exist at the national and international levels that the project must align with?</li>
+                                                    <li>HOW does the project contribute to achieving climate commitments and sustainable development goals?</li>
+                                                </ul>
+                                                <h4>Key Activities:</h4>
+                                                <ul>
+                                                    <li>Review national climate policies, such as:
+                                                        <ul>
+                                                            <li>Nationally Determined Contributions (NDCs) – Commitments under the Paris Agreement.</li>
+                                                            <li>National Adaptation Plans (NAPs) – Country-specific climate resilience strategies.</li>
+                                                            <li>Sectoral policies (e.g., energy, agriculture, disaster risk reduction).</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>Link to global frameworks, including:
+                                                        <ul>
+                                                            <li>Paris Agreement – Mitigation and adaptation commitments.</li>
+                                                            <li>Sustainable Development Goals (SDGs) – Especially SDG 13 (Climate Action), SDG 2 (Zero Hunger), SDG 6 (Clean Water).</li>
+                                                            <li>Sendai Framework for Disaster Risk Reduction – If the project addresses climate-induced disasters.</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>Highlight how the project supports policy implementation, e.g.:
+                                                        <ul>
+                                                            <li>Does the project contribute to a country’s renewable energy transition or carbon neutrality goals?</li>
+                                                            <li>Does it strengthen climate resilience in priority sectors identified in national plans?</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>Ensure compliance with funding requirements, particularly for:
+                                                        <ul>
+                                                            <li>Green Climate Fund (GCF)</li>
+                                                            <li>Adaptation Fund</li>
+                                                            <li>Global Environment Facility (GEF)</li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                                <h4>Example Questions to Address:</h4>
+                                                <ul>
+                                                    <li>What national and international climate policies support this project?</li>
+                                                    <li>How does the project align with NDCs, NAPs, and SDGs?</li>
+                                                    <li>Does the project contribute to the country’s long-term climate strategy?</li>
+                                                    <li>What policy gaps does the project help address?</li>
+                                                </ul>
+                                                <h4>Outcome:</h4>
+                                                <p>A policy-aligned project rationale that strengthens funding eligibility and ensures coherence with government priorities and international agreements.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#step4Collapse" aria-expanded="false" aria-controls="step4Collapse">
+                                            Step 4: Justify Adaptation or Mitigation Actions (WHAT SOLUTION is best, and WHY?)
+                                        </button>
+                                        <div class="collapse" id="step4Collapse">
+                                            <div class="card card-body">
+                                                <h4>Focus:</h4>
+                                                <ul>
+                                                    <li>WHAT type of intervention is needed—adaptation, mitigation, or both?</li>
+                                                    <li>WHY is this the best solution based on climate risks, socio-economic needs, and policy priorities?</li>
+                                                </ul>
+                                                <h4>Key Activities:</h4>
+                                                <ul>
+                                                    <li>Determine the intervention type:
+                                                        <ul>
+                                                            <li>Adaptation actions:
+                                                                <ul>
+                                                                    <li>Address climate risks and build resilience.</li>
+                                                                    <li>Examples: flood defenses, drought-resistant crops, water conservation.</li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>Mitigation actions:
+                                                                <ul>
+                                                                    <li>Reduce greenhouse gas emissions.</li>
+                                                                    <li>Examples: renewable energy projects, afforestation, low-carbon transport.</li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>Use a cause-effect approach to justify actions:
+                                                        <ul>
+                                                            <li>Problem: What is the identified climate risk?</li>
+                                                            <li>Solution: What specific intervention will address this risk?</li>
+                                                            <li>Impact: What are the expected long-term benefits?</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>Ensure feasibility and effectiveness:
+                                                        <ul>
+                                                            <li>Conduct cost-benefit analysis (CBA) to justify investments.</li>
+                                                            <li>Use scientific studies and past successful projects as references.</li>
+                                                            <li>Consider implementation challenges (technical, financial, social).</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>Assess synergies between adaptation and mitigation:
+                                                        <ul>
+                                                            <li>Some projects integrate both (e.g., climate-smart agriculture reduces emissions and improves resilience).</li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                                <h4>Example Questions to Address:</h4>
+                                                <ul>
+                                                    <li>Is the project focused on climate adaptation, mitigation, or both?</li>
+                                                    <li>How does the chosen intervention directly address identified climate risks?</li>
+                                                    <li>What are the long-term environmental and socio-economic benefits?</li>
+                                                    <li>How cost-effective and scalable is the proposed solution?</li>
+                                                    <li>Are there any co-benefits (e.g., improved livelihoods, biodiversity conservation)?</li>
+                                                </ul>
+                                                <h4>Outcome:</h4>
+                                                <p>A justified, well-structured climate intervention that aligns with risk assessment, data evidence, and policy priorities. Stronger funding proposals that clearly define why the selected intervention is necessary and impactful.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="lang-fr" style="display: none;">
+                <h2>Calendrier (90-120 minutes)</h2>
+                <p><strong>24 Lundi 2025</strong></p>
+                <ul>
+                    <li>
+                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#introductionCollapseFr" aria-expanded="false" aria-controls="introductionCollapseFr">
+                            Partie 1 : Introduction et aperçus
+                        </button>
+                        <div class="collapse" id="introductionCollapseFr">
+                            <div class="card card-body">
+                                <h4>Quel impact du changement climatique vous préoccupe le plus dans votre région ?</h4>
+                                <p>Comprendre les impacts spécifiques du changement climatique dans différentes régions est essentiel pour concevoir des stratégies d'adaptation et d'atténuation efficaces. Les participants partageront leurs idées sur la manière dont le changement climatique affecte leurs communautés, industries et environnements.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#objectivesCollapseFr" aria-expanded="false" aria-controls="objectivesCollapseFr">
+                            Partie 2 : Explication des objectifs de l'atelier et des résultats attendus
+                        </button>
+                        <div class="collapse" id="objectivesCollapseFr">
+                            <div class="card card-body">
+                                <h4>Objectifs</h4>
+                                <ul>
+                                    <li>Comprendre le rôle des données climatiques dans le développement de projets – Apprendre à utiliser des données scientifiques pour justifier des interventions liées au climat.</li>
+                                    <li>Identifier les tendances climatiques historiques – Analyser les modèles climatiques passés à l'aide de jeux de données réels.</li>
+                                    <li>Projeter les risques climatiques futurs – Utiliser des modèles climatiques pour évaluer les impacts potentiels.</li>
+                                    <li>Quantifier les vulnérabilités climatiques – Appliquer des indices climatiques et des outils d'évaluation des risques pour évaluer les populations et les écosystèmes affectés.</li>
+                                    <li>Renforcer la prise de décision dans les propositions climatiques – Apprendre à intégrer des données climatiques dans les demandes de financement pour améliorer la crédibilité du projet.</li>
+                                </ul>
+                                <h4>Résultats attendus</h4>
+                                <ul>
+                                    <li>Analyser et interpréter les données climatiques – Utiliser les tendances historiques et les projections pour éclairer la conception du projet.</li>
+                                    <li>Développer une raison d'être climatique – Rédiger une justification convaincante pour une proposition de projet, démontrant le lien avec le climat.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#foundationsCollapseFr" aria-expanded="false" aria-controls="foundationsCollapseFr">
+                            Partie 3 : Fondements de la raison d'être climatique
+                        </button>
+                        <div class="collapse" id="foundationsCollapseFr">
+                            <div class="card card-body">
+                                <h4>Définir la raison d'être climatique</h4>
+                                <h5>Quoi ?</h5>
+                                <p>La raison d'être climatique fait référence à la justification de la manière dont un projet proposé aborde directement le changement climatique. Elle est basée sur des preuves scientifiques, des données climatiques et des évaluations des risques pour démontrer la nécessité d'une intervention. Une raison d'être climatique solide relie les objectifs du projet aux tendances climatiques observées, aux projections futures et aux évaluations de vulnérabilité.</p>
+                                <h5>Pourquoi ?</h5>
+                                <ul>
+                                    <li>Garantit que les projets sont conçus pour répondre spécifiquement aux défis liés au climat plutôt qu'à des problèmes de développement général.</li>
+                                    <li>Aide à sécuriser le financement des mécanismes de financement climatique (par exemple, le Fonds vert pour le climat, le Fonds d'adaptation) en démontrant un impact climatique clair.</li>
+                                    <li>S'aligne sur les politiques climatiques nationales et les cadres internationaux comme l'Accord de Paris et les Objectifs de développement durable (ODD).</li>
+                                    <li>Soutient la prise de décision fondée sur des preuves pour les actions d'adaptation et d'atténuation du climat.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <p><strong>25 Mardi 2025</strong></p>
+                <ul>
+                    <li>
+                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#climateEvidenceCollapseFr" aria-expanded="false" aria-controls="climateEvidenceCollapseFr">
+                            Partie 4 : Preuves climatiques et analyse des données
+                        </button>
+                        <div class="collapse" id="climateEvidenceCollapseFr">
+                            <div class="card card-body">
+                                <ul>
+                                    <li>
+                                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#climateDataCollapseFr" aria-expanded="false" aria-controls="climateDataCollapseFr">
+                                            Sources de données climatiques
+                                        </button>
+                                        <div class="collapse" id="climateDataCollapseFr">
+                                            <div class="card card-body text-center">
+                                                <img src="/mnt/data/image.png" alt="Sources de données climatiques" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#climateMetricsCollapseFr" aria-expanded="false" aria-controls="climateMetricsCollapseFr">
+                                            Indices et métriques climatiques pour l'analyse
+                                        </button>
+                                        <div class="collapse" id="climateMetricsCollapseFr">
+                                            <div class="card card-body text-center">
+                                                <img src="/mnt/data/image.png" alt="Indices et métriques climatiques" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#analysisToolsCollapseFr" aria-expanded="false" aria-controls="analysisToolsCollapseFr">
+                                            Outils de données climatiques prêts à l'analyse
+                                        </button>
+                                        <div class="collapse" id="analysisToolsCollapseFr">
+                                            <div class="card card-body">
+                                                <h4>Outils clés pour l'analyse des données climatiques</h4>
+                                                <ul>
+                                                    <li><a href="https://adaptationatlas.cgiar.org" target="_blank">Atlas d'adaptation pour l'Afrique</a> - Fournit des évaluations spatiales explicites des risques climatiques pour soutenir la prise de décision en Afrique.</li>
+                                                    <li><a href="https://climateknowledgeportal.worldbank.org" target="_blank">Portail de connaissances sur le changement climatique de la Banque mondiale</a> - Offre des données climatiques mondiales, régionales et nationales, des évaluations des risques et des projections.</li>
+                                                    <li><a href="https://agrica.de" target="_blank">AGRICA - Analyses des risques climatiques pour l'Afrique</a> - Fournit des analyses détaillées des risques et des impacts climatiques pour aider les stratégies d'adaptation en Afrique subsaharienne.</li>
+                                                </ul>
+                                                <p class="mt-3">Ces plateformes offrent des ensembles de données climatiques prêts à l'analyse qui peuvent être directement intégrés dans votre processus de développement de la raison d'être climatique.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                
+                <p><strong>26 Mercredi 2025</strong></p>
+                <ul>
+                    <li>Évaluation socio-économique</li>
+                </ul>
+
+                <p><strong>27 Jeudi 2025</strong></p>
+                <ul>
+                    <li>
+                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#climateImpactAssessmentCollapseFr" aria-expanded="false" aria-controls="climateImpactAssessmentCollapseFr">
+                            Partie 5 : Session pratique pour développer une raison d'être climatique
+                        </button>
+                        <div class="collapse" id="climateImpactAssessmentCollapseFr">
+                            <div class="card card-body">
+                                <ul>
+                                    <li>
+                                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#step1CollapseFr" aria-expanded="false" aria-controls="step1CollapseFr">
+                                            Étape 1 : Identification des impacts climatiques et des vulnérabilités (QUOI et QUI est affecté ?)
+                                        </button>
+                                        <div class="collapse" id="step1CollapseFr">
+                                            <div class="card card-body">
+                                                <h4>Concentration :</h4>
+                                                <ul>
+                                                    <li>Établir QUELS risques climatiques existent dans la zone du projet.</li>
+                                                    <li>Identifier QUI est le plus vulnérable à ces risques.</li>
+                                                </ul>
+                                                <h4>Activités clés :</h4>
+                                                <ul>
+                                                    <li>Évaluer les dangers liés au climat (par exemple, sécheresses, inondations, vagues de chaleur, élévation du niveau de la mer).</li>
+                                                    <li>Identifier les secteurs et populations vulnérables (par exemple, agriculture, eau, santé, communautés à faible revenu).</li>
+                                                    <li>Utiliser des évaluations de vulnérabilité pour déterminer l'exposition, la sensibilité et la capacité d'adaptation.</li>
+                                                </ul>
+                                                <h4>Exemples de questions à aborder :</h4>
+                                                <ul>
+                                                    <li>Quels sont les principaux dangers climatiques dans la zone du projet ?</li>
+                                                    <li>Quels secteurs et communautés sont les plus à risque ?</li>
+                                                    <li>Quel a été l'impact observé du changement climatique sur ces zones ?</li>
+                                                </ul>
+                                                <h4>Résultat :</h4>
+                                                <p>Une compréhension claire des risques climatiques qui affectent la zone du projet et de qui est le plus vulnérable à ces risques.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#step2CollapseFr" aria-expanded="false" aria-controls="step2CollapseFr">
+                                            Étape 2 : Utilisation des données scientifiques et des preuves (POURQUOI et COMMENT cela se produit-il ?)
+                                        </button>
+                                        <div class="collapse" id="step2CollapseFr">
+                                            <div class="card card-body">
+                                                <h4>Concentration :</h4>
+                                                <ul>
+                                                    <li>POURQUOI ces risques climatiques se produisent-ils ? (Appuyé par des preuves scientifiques).</li>
+                                                    <li>COMMENT ces risques devraient-ils évoluer à l'avenir ?</li>
+                                                </ul>
+                                                <h4>Activités clés :</h4>
+                                                <ul>
+                                                    <li>Analyser les données climatiques historiques pour détecter les tendances (par exemple, les changements de température au cours des 50 dernières années).</li>
+                                                    <li>Utiliser des modèles climatiques et des projections pour évaluer les risques futurs (par exemple, scénarios du GIEC, projections RCP).</li>
+                                                    <li>Valider les résultats avec des recherches scientifiques (par exemple, rapports du GIEC, études évaluées par des pairs).</li>
+                                                </ul>
+                                                <h4>Exemples de questions à aborder :</h4>
+                                                <ul>
+                                                    <li>Que montrent les données climatiques historiques sur les tendances de température, de précipitations et d'événements extrêmes ?</li>
+                                                    <li>Comment les projections climatiques futures devraient-elles impacter la zone du projet ?</li>
+                                                    <li>Quelles études ou rapports scientifiques confirment ces tendances ?</li>
+                                                </ul>
+                                                <h4>Résultat :</h4>
+                                                <p>Une justification scientifiquement fondée qui explique pourquoi les risques climatiques existent et comment ils pourraient s'aggraver avec le temps.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#step3CollapseFr" aria-expanded="false" aria-controls="step3CollapseFr">
+                                            Étape 3 : Alignement avec les politiques nationales et internationales (QUELS CADRES POLITIQUES soutiennent ce projet ?)
+                                        </button>
+                                        <div class="collapse" id="step3CollapseFr">
+                                            <div class="card card-body">
+                                                <h4>Concentration :</h4>
+                                                <ul>
+                                                    <li>QUELLES politiques et stratégies existent aux niveaux national et international auxquelles le projet doit s'aligner ?</li>
+                                                    <li>COMMENT le projet contribue-t-il à la réalisation des engagements climatiques et des objectifs de développement durable ?</li>
+                                                </ul>
+                                                <h4>Activités clés :</h4>
+                                                <ul>
+                                                    <li>Examiner les politiques climatiques nationales, telles que :
+                                                        <ul>
+                                                            <li>Les Contributions Déterminées au niveau National (CDN) – Engagements dans le cadre de l'Accord de Paris.</li>
+                                                            <li>Les Plans Nationaux d'Adaptation (PNA) – Stratégies de résilience climatique spécifiques à chaque pays.</li>
+                                                            <li>Les politiques sectorielles (par exemple, énergie, agriculture, réduction des risques de catastrophe).</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>Lier aux cadres mondiaux, y compris :
+                                                        <ul>
+                                                            <li>Accord de Paris – Engagements en matière d'atténuation et d'adaptation.</li>
+                                                            <li>Objectifs de développement durable (ODD) – En particulier l'ODD 13 (Action climatique), l'ODD 2 (Faim zéro), l'ODD 6 (Eau propre).</li>
+                                                            <li>Cadre de Sendai pour la réduction des risques de catastrophe – Si le projet traite des catastrophes induites par le climat.</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>Mettre en évidence comment le projet soutient la mise en œuvre des politiques, par exemple :
+                                                        <ul>
+                                                            <li>Le projet contribue-t-il à la transition énergétique renouvelable ou aux objectifs de neutralité carbone d'un pays ?</li>
+                                                            <li>Renforce-t-il la résilience climatique dans les secteurs prioritaires identifiés dans les plans nationaux ?</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>Assurer la conformité avec les exigences de financement, en particulier pour :
+                                                        <ul>
+                                                            <li>Fonds vert pour le climat (GCF)</li>
+                                                            <li>Fonds d'adaptation</li>
+                                                            <li>Fonds pour l'environnement mondial (GEF)</li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                                <h4>Exemples de questions à aborder :</h4>
+                                                <ul>
+                                                    <li>Quelles politiques climatiques nationales et internationales soutiennent ce projet ?</li>
+                                                    <li>Comment le projet s'aligne-t-il sur les CDN, les PNA et les ODD ?</li>
+                                                    <li>Le projet contribue-t-il à la stratégie climatique à long terme du pays ?</li>
+                                                    <li>Quelles lacunes politiques le projet aide-t-il à combler ?</li>
+                                                </ul>
+                                                <h4>Résultat :</h4>
+                                                <p>Une justification de projet alignée sur les politiques, renforçant l'éligibilité au financement et assurant la cohérence avec les priorités gouvernementales et les accords internationaux.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#step4CollapseFr" aria-expanded="false" aria-controls="step4CollapseFr">
+                                            Étape 4 : Justifier les actions d'adaptation ou d'atténuation (QUELLE SOLUTION est la meilleure, et POURQUOI ?)
+                                        </button>
+                                        <div class="collapse" id="step4CollapseFr">
+                                            <div class="card card-body">
+                                                <h4>Concentration :</h4>
+                                                <ul>
+                                                    <li>QUEL type d'intervention est nécessaire – adaptation, atténuation, ou les deux ?</li>
+                                                    <li>POURQUOI cette solution est-elle la meilleure en fonction des risques climatiques, des besoins socio-économiques et des priorités politiques ?</li>
+                                                </ul>
+                                                <h4>Activités clés :</h4>
+                                                <ul>
+                                                    <li>Déterminer le type d'intervention :
+                                                        <ul>
+                                                            <li>Actions d'adaptation :
+                                                                <ul>
+                                                                    <li>Aborder les risques climatiques et renforcer la résilience.</li>
+                                                                    <li>Exemples : défenses contre les inondations, cultures résistantes à la sécheresse, conservation de l'eau.</li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>Actions d'atténuation :
+                                                                <ul>
+                                                                    <li>Réduire les émissions de gaz à effet de serre.</li>
+                                                                    <li>Exemples : projets d'énergie renouvelable, reboisement, transport à faible émission de carbone.</li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>Utiliser une approche cause-effet pour justifier les actions :
+                                                        <ul>
+                                                            <li>Problème : Quel est le risque climatique identifié ?</li>
+                                                            <li>Solution : Quelle intervention spécifique permettra de résoudre ce risque ?</li>
+                                                            <li>Impact : Quels sont les avantages à long terme attendus ?</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>Assurer la faisabilité et l'efficacité :
+                                                        <ul>
+                                                            <li>Réaliser une analyse coût-bénéfice (ACB) pour justifier les investissements.</li>
+                                                            <li>Utiliser des études scientifiques et des projets réussis comme références.</li>
+                                                            <li>Prendre en compte les défis de mise en œuvre (techniques, financiers, sociaux).</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>Évaluer les synergies entre adaptation et atténuation :
+                                                        <ul>
+                                                            <li>Certains projets intègrent les deux (par exemple, l'agriculture intelligente face au climat réduit les émissions et améliore la résilience).</li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                                <h4>Exemples de questions à aborder :</h4>
+                                                <ul>
+                                                    <li>Le projet est-il axé sur l'adaptation au climat, l'atténuation, ou les deux ?</li>
+                                                    <li>Comment l'intervention choisie aborde-t-elle directement les risques climatiques identifiés ?</li>
+                                                    <li>Quels sont les avantages environnementaux et socio-économiques à long terme ?</li>
+                                                    <li>Quelle est la rentabilité et l'évolutivité de la solution proposée ?</li>
+                                                    <li>Y a-t-il des co-bénéfices (par exemple, amélioration des moyens de subsistance, conservation de la biodiversité) ?</li>
+                                                </ul>
+                                                <h4>Résultat :</h4>
+                                                <p>Une intervention climatique justifiée et bien structurée qui s'aligne sur l'évaluation des risques, les preuves scientifiques et les priorités politiques. Des propositions de financement plus solides qui définissent clairement pourquoi l'intervention sélectionnée est nécessaire et impactante.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-        </div>
-        
-        <div class="content-section container">
+    </div>
+
+    <!-- New Resources Section -->
+    <div class="content-section container">
+        <div class="lang-en">
             <h2>Other Helpful Resources</h2>
             <ul>
                 <li><a href="https://www.greenclimate.fund/sites/default/files/document/gcf-b33-05.pdf" target="_blank">Steps to enhance the climate rationale of GCF-supported activities</a></li>
                 <li><a href="https://ccafs.cgiar.org/resources/publications/kenya-county-climate-risk-profiles" target="_blank">Informing sub-national climate smart agriculture investments in Kenya: county climate risk profiles</a></li>
+                <li><a href="https://climateknowledgeportal.worldbank.org/country-profiles" target="_blank">CCKP’s Climate Risk Country Profiles</a></li>
+                <li><a href="https://agrica.de/downloads/?format=28" target="_blank">AGRICA – Climate risk analyses for adaptation planning in sub-Saharan Africa</a></li>
                 <li><a href="https://admin.concern.net/sites/default/files/media/migrated/crop_weather_and_climate_vulnerability_profiles_.pdf" target="_blank">Crop Weather and Climate Vulnerability Profiles</a></li>
+            </ul>
+        </div>
+        <div class="lang-fr" style="display: none;">
+            <h2>Autres ressources utiles</h2>
+            <ul>
+                <li><a href="https://www.greenclimate.fund/sites/default/files/document/gcf-b33-05.pdf" target="_blank">Étapes pour renforcer la raison d'être climatique des activités soutenues par le GCF</a></li>
+                <li><a href="https://ccafs.cgiar.org/resources/publications/kenya-county-climate-risk-profiles" target="_blank">Informations sur les investissements dans l'agriculture intelligente face au climat au niveau infranational au Kenya : profils de risques climatiques par comté</a></li>
+                <li><a href="https://climateknowledgeportal.worldbank.org/country-profiles" target="_blank">Profils de risques climatiques par pays du CCKP</a></li>
+                <li><a href="https://agrica.de/downloads/?format=28" target="_blank">AGRICA – Analyses des risques climatiques pour la planification de l'adaptation en Afrique subsaharienne</a></li>
+                <li><a href="https://admin.concern.net/sites/default/files/media/migrated/crop_weather_and_climate_vulnerability_profiles_.pdf" target="_blank">Profils de vulnérabilité des cultures au climat et à la météo</a></li>
             </ul>
         </div>
     </div>
@@ -280,5 +777,24 @@
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('englishBtn').addEventListener('click', function() {
+            document.querySelectorAll('.lang-en').forEach(function(el) {
+                el.style.display = 'block';
+            });
+            document.querySelectorAll('.lang-fr').forEach(function(el) {
+                el.style.display = 'none';
+            });
+        });
+
+        document.getElementById('frenchBtn').addEventListener('click', function() {
+            document.querySelectorAll('.lang-en').forEach(function(el) {
+                el.style.display = 'none';
+            });
+            document.querySelectorAll('.lang-fr').forEach(function(el) {
+                el.style.display = 'block';
+            });
+        });
+    </script>
 </body>
 </html>
